@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FUTUROX — Innovación estratégica, experiencia y diseño</title>
+  <link rel="icon" href="assets/logo-mark.svg">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <link rel="stylesheet" href="site.css">
+
+  <style>
+    /* ------------------------------------------------------------------
+       Print styles — A4 portrait, color-faithful, paged at every section.
+       ------------------------------------------------------------------ */
+    @page {
+      size: A4 portrait;
+      margin: 14mm 10mm;
+    }
+
+    @media print {
+      html, body {
+        background: var(--bone-50) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      *, *::before, *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      /* Hide fixed nav — it would tile on every page */
+      header[style*="position: fixed"],
+      header[style*="position:fixed"] {
+        display: none !important;
+      }
+
+      /* Tighten section vertical rhythm for paper. */
+      section {
+        padding: 24mm 14mm !important;
+        break-inside: avoid;
+      }
+
+      /* Major page breaks between top-level sections */
+      [data-site="hero"],
+      #posicionamiento,
+      [data-site="services-intro-section"],
+      [data-site="service-section"],
+      #nosotros,
+      #contacto,
+      footer {
+        break-before: page;
+        break-inside: auto;
+      }
+      [data-site="hero"] { break-before: avoid; }
+
+      /* Founder spreads — one per page */
+      [data-site="founder-spread"] {
+        break-before: page;
+        break-inside: avoid;
+      }
+      [data-site="founder-spread"]:first-of-type {
+        break-before: auto;
+      }
+
+      /* Collapse two-column hero/service/founder grids so they fit A4 */
+      [data-site="hero-inner"],
+      [data-site="positioning-inner"],
+      [data-site="service-inner"],
+      [data-site="founders-head"],
+      [data-site="founder-spread"],
+      [data-site="services-copyrow"],
+      [data-site="contact-inner"] {
+        grid-template-columns: 1fr !important;
+        gap: 16mm !important;
+      }
+
+      /* 4-up architecture diagram → 2×2 on paper */
+      [data-site="arch-grid"] {
+        grid-template-columns: 1fr 1fr !important;
+        row-gap: 14mm !important;
+      }
+
+      /* Constrain oversized hero / section titles to fit page width */
+      h1, h2, h3 {
+        font-size: 64pt !important;
+        line-height: 0.96 !important;
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+      h3 { font-size: 36pt !important; }
+
+      /* Smaller display variants used in headers / section names */
+      [data-site="hero"] h1 { font-size: 56pt !important; }
+      [data-site="services-intro-section"] h2 { font-size: 64pt !important; }
+
+      /* Body copy more conservative for print */
+      p, li { font-size: 11pt !important; line-height: 1.55 !important; }
+      .layerItem, [class*="layerItem"] { font-size: 10.5pt !important; }
+
+      /* Suppress decorative shadows + blur */
+      * {
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+
+      /* Force ink-shell sections to keep their dark background */
+      [style*="--ink-900"] { color-adjust: exact; }
+
+      /* Portrait blocks — let them size from aspect ratio rather than fixed 480px */
+      [data-site="founder-portrait"] {
+        max-width: 120mm;
+        margin: 0 auto;
+      }
+
+      /* Forms: drop interactive chrome but keep labels visible */
+      input, textarea, button { box-shadow: none !important; }
+      button { background: var(--coral-500) !important; color: var(--paper) !important; }
+
+      /* Footer ink section keeps its dark surface */
+      footer { padding: 18mm 14mm !important; }
+
+      /* Disable marquee-like animations */
+      .marquee, [class*="marquee"] { animation: none !important; }
+    }
+  </style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Primitives -->
+  <script type="text/babel" src="components/ArcMark.jsx"></script>
+  <script type="text/babel" src="components/Button.jsx"></script>
+  <script type="text/babel" src="components/Pill.jsx"></script>
+  <script type="text/babel" src="components/LinkedInIcon.jsx"></script>
+
+  <!-- Visualizations -->
+  <script type="text/babel" src="components/SystemViz.jsx"></script>
+  <script type="text/babel" src="components/ServiceVisuals.jsx"></script>
+
+  <!-- Sections -->
+  <script type="text/babel" src="components/NavSite.jsx"></script>
+  <script type="text/babel" src="components/HeroSite.jsx"></script>
+  <script type="text/babel" src="components/Positioning.jsx"></script>
+  <script type="text/babel" src="components/ServicesNarrative.jsx"></script>
+  <script type="text/babel" src="components/Founders.jsx"></script>
+  <script type="text/babel" src="components/ContactSite.jsx"></script>
+  <script type="text/babel" src="components/Footer.jsx"></script>
+
+  <!-- App -->
+  <script type="text/babel" src="site.jsx"></script>
+
+  <!-- Auto-print: wait for fonts + React + Babel transforms, then print -->
+  <script type="text/babel">
+    (async () => {
+      try {
+        if (document.fonts && document.fonts.ready) {
+          await document.fonts.ready;
+        }
+      } catch (e) { /* no-op */ }
+      // Give React a tick to mount and Babel a beat to finish transforming.
+      await new Promise(r => setTimeout(r, 800));
+      window.print();
+    })();
+  </script>
+</body>
+</html>

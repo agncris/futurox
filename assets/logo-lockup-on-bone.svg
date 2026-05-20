@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" fill="none">
+  <rect width="600" height="200" fill="#F6F1E8"></rect>
+  <circle cx="228" cy="100" r="78" stroke="#0B1733" stroke-width="2.4"></circle>
+  <circle cx="300" cy="100" r="78" stroke="#0B1733" stroke-width="2.4"></circle>
+  <text x="264" y="124" text-anchor="middle" font-family="Geist, &#39;Helvetica Neue&#39;, Arial, sans-serif" font-weight="800" font-size="62" letter-spacing="1.5" fill="#F08A5D">FUTUROX</text>
+</svg>
