@@ -318,15 +318,15 @@ const LangToggle = ({ onInk = false }) => {
 
   const langs = ["ES", "EN"];
   return (
-    <div role="group" aria-label="Language"
+    <div role="group" aria-label="Language" data-site="lang-toggle-control"
          style={{
            display: "inline-flex", alignItems: "center",
            border: `1px solid ${borderColor}`,
            borderRadius: 999,
            padding: 2,
            fontFamily: "var(--font-sans)",
-           fontSize: 11, fontWeight: 500,
-           letterSpacing: "0.14em",
+           fontSize: 12, fontWeight: 600,
+           letterSpacing: "0.12em",
          }}>
       {langs.map((l, i) => {
         const code = l.toLowerCase();
