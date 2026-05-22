@@ -46,11 +46,6 @@ button { font: inherit; cursor: pointer; }
 
 /* ── desktop hamburger / sheet visibility default ── */
 [data-site="nav-hamburger"] { display: none; }
-[data-site="lang-toggle"],
-[data-site="lang-toggle-sheet"] {
-  flex-shrink: 0;
-  display: inline-flex;
-}
 
 @media (max-width: 1180px) {
   section { padding: 96px 48px !important; }

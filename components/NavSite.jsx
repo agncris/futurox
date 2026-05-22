@@ -128,10 +128,8 @@ const NavSite = ({ current = "" }) => {
           </a>
 
           <div style={navSiteStyles.right}>
-            {/* Lang toggle stays outside nav-links so it remains visible on mobile */}
-            <div data-site="lang-toggle" style={{ flexShrink: 0 }}>
-              <LangToggle />
-            </div>
+            {/* Lang toggle is ALWAYS visible — not nested inside the collapsing links group */}
+            <LangToggle />
 
             {/* Desktop links */}
             <nav style={navSiteStyles.links} data-site="nav-links">
@@ -180,14 +178,9 @@ const NavSite = ({ current = "" }) => {
               <ArcMark size={22} stroke={1.8} color="var(--ink-900)" />
               <Wordmark height={16} color="var(--ink-900)" />
             </a>
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <div data-site="lang-toggle-sheet">
-                <LangToggle />
-              </div>
-              <button type="button" aria-label={t("nav.close")}
-                      onClick={() => setOpen(false)}
-                      style={navSiteStyles.sheetClose}>×</button>
-            </div>
+            <button type="button" aria-label={t("nav.close")}
+                    onClick={() => setOpen(false)}
+                    style={navSiteStyles.sheetClose}>×</button>
           </div>
           <nav style={navSiteStyles.sheetNav}>
             {items.map(it => (
