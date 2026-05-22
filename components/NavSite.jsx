@@ -11,12 +11,17 @@ const navSiteStyles = {
     maxWidth: 1400, margin: "0 auto",
     padding: "18px 48px",
     display: "flex", alignItems: "center", justifyContent: "space-between",
-    gap: 24,
+    gap: 16,
   },
   brand: {
     display: "flex", alignItems: "center", gap: 12,
     color: "var(--ink-900)", textDecoration: "none",
     flexShrink: 0,
+  },
+  /* persistent right cluster — lang toggle + (desktop) links/CTA + (mobile) hamburger */
+  right: {
+    display: "flex", alignItems: "center", gap: 16,
+    marginLeft: "auto",
   },
   links: { display: "flex", alignItems: "center", gap: 28 },
   link: {
@@ -122,42 +127,46 @@ const NavSite = ({ current = "" }) => {
             <Wordmark height={16} color="var(--ink-900)" />
           </a>
 
-          {/* Desktop links */}
-          <nav style={navSiteStyles.links} data-site="nav-links">
-            {items.map(it => {
-              const isCurrent = it.id === current;
-              const isHover = hover === it.id;
-              return (
-                <a key={it.id} href={it.href}
-                   style={{
-                     ...navSiteStyles.link,
-                     borderBottomColor: isCurrent ? "var(--coral-500)" : "transparent",
-                     color: isHover && !isCurrent ? "var(--coral-600)" : "var(--ink-900)",
-                   }}
-                   onMouseEnter={() => setHover(it.id)}
-                   onMouseLeave={() => setHover(null)}>
-                  {it.label}
-                </a>
-              );
-            })}
-            <LinkedInGlyph href="https://www.linkedin.com/company/futurox/" />
+          <div style={navSiteStyles.right}>
+            {/* Lang toggle is ALWAYS visible — not nested inside the collapsing links group */}
             <LangToggle />
-            <Button variant="secondary" withArrow href="#contacto">{t("nav.cta")}</Button>
-          </nav>
 
-          {/* Mobile hamburger */}
-          <button type="button"
-                  data-site="nav-hamburger"
-                  aria-label={t("nav.open")}
-                  aria-expanded={open}
-                  onClick={() => setOpen(true)}
-                  style={navSiteStyles.hamburger}>
-            <span style={navSiteStyles.hamburgerIcon} aria-hidden="true">
-              <span style={navSiteStyles.hamburgerBar} />
-              <span style={navSiteStyles.hamburgerBar} />
-              <span style={navSiteStyles.hamburgerBar} />
-            </span>
-          </button>
+            {/* Desktop links */}
+            <nav style={navSiteStyles.links} data-site="nav-links">
+              {items.map(it => {
+                const isCurrent = it.id === current;
+                const isHover = hover === it.id;
+                return (
+                  <a key={it.id} href={it.href}
+                     style={{
+                       ...navSiteStyles.link,
+                       borderBottomColor: isCurrent ? "var(--coral-500)" : "transparent",
+                       color: isHover && !isCurrent ? "var(--coral-600)" : "var(--ink-900)",
+                     }}
+                     onMouseEnter={() => setHover(it.id)}
+                     onMouseLeave={() => setHover(null)}>
+                    {it.label}
+                  </a>
+                );
+              })}
+              <LinkedInGlyph href="https://www.linkedin.com/company/futurox/" />
+              <Button variant="secondary" withArrow href="#contacto">{t("nav.cta")}</Button>
+            </nav>
+
+            {/* Mobile hamburger */}
+            <button type="button"
+                    data-site="nav-hamburger"
+                    aria-label={t("nav.open")}
+                    aria-expanded={open}
+                    onClick={() => setOpen(true)}
+                    style={navSiteStyles.hamburger}>
+              <span style={navSiteStyles.hamburgerIcon} aria-hidden="true">
+                <span style={navSiteStyles.hamburgerBar} />
+                <span style={navSiteStyles.hamburgerBar} />
+                <span style={navSiteStyles.hamburgerBar} />
+              </span>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -182,10 +191,7 @@ const NavSite = ({ current = "" }) => {
           </nav>
           <div style={navSiteStyles.sheetFooter}>
             <span style={navSiteStyles.sheetMeta}>{t("nav.region")}</span>
-            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-              <LangToggle />
-              <LinkedInGlyph href="https://www.linkedin.com/company/futurox/" />
-            </div>
+            <LinkedInGlyph href="https://www.linkedin.com/company/futurox/" />
           </div>
         </div>
       ) : null}
