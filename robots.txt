@@ -1,0 +1,54 @@
+# robots.txt — futurox.cl
+# Política: máxima visibilidad. Para una consultora, ser leída y citada
+# por buscadores y asistentes de IA vale más que proteger el contenido
+# del entrenamiento. Se permiten explícitamente los crawlers de IA.
+
+# Buscadores tradicionales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawlers de IA — respuestas y búsqueda
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Todos los demás
+User-agent: *
+Allow: /
+
+Sitemap: https://futurox.cl/sitemap.xml

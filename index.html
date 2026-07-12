@@ -2,40 +2,544 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>FUTUROX — Innovación estratégica, experiencia y diseño</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FUTUROX — Talleres y consultoría de innovación estratégica · Chile y Latinoamérica</title>
+  <meta name="description" content="Consultora de innovación estratégica en Viña del Mar y Santiago. Talleres de Futures Thinking, Design Thinking y diseño de servicios para equipos, y consultoría de la estrategia al producto.">
+  <link rel="canonical" href="https://futurox.cl/">
   <link rel="icon" href="assets/logo-mark.svg">
-  <link rel="stylesheet" href="colors_and_type.css">
-  <link rel="stylesheet" href="site.css">
-
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <!-- TODO: crear assets/og-image.png (1200×630): logo FUTUROX + tagline "El futuro no llega. Se diseña." sobre navy #0A1230 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FUTUROX — Talleres y consultoría de innovación estratégica · Chile y Latinoamérica">
+  <meta property="og:description" content="Consultora de innovación estratégica en Viña del Mar y Santiago. Talleres de Futures Thinking, Design Thinking y diseño de servicios para equipos, y consultoría de la estrategia al producto.">
+  <meta property="og:url" content="https://futurox.cl/">
+  <meta property="og:image" content="https://futurox.cl/assets/og-image.png">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FUTUROX — Talleres y consultoría de innovación estratégica · Chile y Latinoamérica">
+  <meta name="twitter:image" content="https://futurox.cl/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://futurox.cl/#org",
+      "name": "FUTUROX",
+      "url": "https://futurox.cl/",
+      "logo": "https://futurox.cl/assets/logo-futurox-on-navy.png",
+      "slogan": "El futuro no llega. Se diseña.",
+      "description": "Consultora de innovación estratégica con base en Viña del Mar y Santiago, Chile. Talleres de innovación, Futures Thinking y Design Thinking para equipos de empresas, y consultoría en estrategia, diseño de servicios y experiencia. Presencial en Chile y remoto en toda Latinoamérica, con proyectos en Chile, Bolivia y Ecuador.",
+      "email": "hola@futurox.cl",
+      "telephone": "+56951087502",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Viña del Mar",
+        "addressRegion": "Valparaíso",
+        "addressCountry": "CL"
+      },
+      "areaServed": [
+        "CL",
+        "BO",
+        "EC",
+        "Latin America"
+      ],
+      "inLanguage": [
+        "es",
+        "en"
+      ],
+      "knowsLanguage": [
+        "es",
+        "en"
+      ],
+      "dateModified": "2026-07-11",
+      "sameAs": [
+        "https://www.linkedin.com/company/futurox/"
+      ],
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Cristian Aguilar",
+          "jobTitle": "Co-fundador · Diseño estratégico",
+          "alumniOf": "Universidad Adolfo Ibáñez",
+          "sameAs": [
+            "https://www.linkedin.com/in/cristian-aguilar-navarrete"
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Daniela Illanes",
+          "jobTitle": "Co-fundadora · Innovación y crecimiento",
+          "alumniOf": "Universidad Adolfo Ibáñez",
+          "sameAs": [
+            "https://www.linkedin.com/in/cumi-fintech-danillanes"
+          ]
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Talleres y consultoría FUTUROX",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Taller de Futures Thinking",
+              "url": "https://futurox.cl/talleres/futures-thinking/",
+              "serviceType": "Taller",
+              "description": "Media jornada (4 horas), presencial o remoto. El equipo mapea señales de cambio de su industria, construye escenarios propios y los convierte en definiciones estratégicas. Grupos de 8 a 30 personas.",
+              "provider": {
+                "@id": "https://futurox.cl/#org"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Equipos directivos y de estrategia"
+              },
+              "areaServed": [
+                "CL",
+                "BO",
+                "EC",
+                "Latin America"
+              ],
+              "availableChannel": [
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Presencial"
+                },
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Remoto"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Programa de Innovación Estratégica",
+              "url": "https://futurox.cl/talleres/programa-innovacion/",
+              "serviceType": "Programa",
+              "description": "Jornada completa (8 horas) o dos medias jornadas. El equipo recorre el ciclo completo —explorar, definir, priorizar— sobre un desafío real. Sale con un portafolio priorizado y una hoja de ruta con responsables.",
+              "provider": {
+                "@id": "https://futurox.cl/#org"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Gerencias y equipos ampliados"
+              },
+              "areaServed": [
+                "CL",
+                "BO",
+                "EC",
+                "Latin America"
+              ],
+              "availableChannel": [
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Presencial"
+                },
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Remoto"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Taller de Design Thinking aplicado",
+              "url": "https://futurox.cl/talleres/design-thinking/",
+              "serviceType": "Taller",
+              "description": "Media jornada o jornada completa. El equipo empatiza, define, idea y prototipa sobre su propio caso. Sale con prototipos de solución y un plan de validación.",
+              "provider": {
+                "@id": "https://futurox.cl/#org"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Equipos de cualquier área"
+              },
+              "areaServed": [
+                "CL",
+                "BO",
+                "EC",
+                "Latin America"
+              ],
+              "availableChannel": [
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Presencial"
+                },
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Remoto"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Taller de Diseño de Servicios y Experiencia",
+              "url": "https://futurox.cl/talleres/diseno-de-servicios/",
+              "serviceType": "Taller",
+              "description": "Jornada completa. El equipo mapea el servicio con los ojos del cliente, encuentra las fricciones que cuestan negocio y las prioriza. Sale con journey map propio, fricciones priorizadas y quick wins.",
+              "provider": {
+                "@id": "https://futurox.cl/#org"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Equipos de experiencia de clientes, operaciones y canales"
+              },
+              "areaServed": [
+                "CL",
+                "BO",
+                "EC",
+                "Latin America"
+              ],
+              "availableChannel": [
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Presencial"
+                },
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Remoto"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Diseño de Futuros",
+              "url": "https://futurox.cl/consultoria/diseno-de-futuros/",
+              "serviceType": "Consultoría",
+              "description": "Consultoría para decidir hoy con visión de largo plazo: mapa de cambios de la industria, escenarios plausibles y hoja de ruta estratégica. Acompañamientos de 2 a 4 meses.",
+              "provider": {
+                "@id": "https://futurox.cl/#org"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Gerencias generales y de estrategia"
+              },
+              "areaServed": [
+                "CL",
+                "BO",
+                "EC",
+                "Latin America"
+              ],
+              "availableChannel": [
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Presencial"
+                },
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Remoto"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Innovación y Design Thinking",
+              "url": "https://futurox.cl/consultoria/innovacion/",
+              "serviceType": "Consultoría",
+              "description": "Consultoría para pasar de las ideas a iniciativas validadas: discovery, prototipado y validación, dejando la capacidad instalada en el equipo.",
+              "provider": {
+                "@id": "https://futurox.cl/#org"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Gerencias de innovación y transformación"
+              },
+              "areaServed": [
+                "CL",
+                "BO",
+                "EC",
+                "Latin America"
+              ],
+              "availableChannel": [
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Presencial"
+                },
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Remoto"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Diseño de Servicios y Experiencia",
+              "url": "https://futurox.cl/consultoria/servicios-y-experiencia/",
+              "serviceType": "Consultoría",
+              "description": "Rediseño de la experiencia de clientes y de los procesos que la sostienen: research, journey maps, service blueprint y rediseño priorizado.",
+              "provider": {
+                "@id": "https://futurox.cl/#org"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Gerencias de experiencia de clientes y operaciones"
+              },
+              "areaServed": [
+                "CL",
+                "BO",
+                "EC",
+                "Latin America"
+              ],
+              "availableChannel": [
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Presencial"
+                },
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Remoto"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Diseño de Interfaces Digitales",
+              "url": "https://futurox.cl/consultoria/interfaces-digitales/",
+              "serviceType": "Consultoría",
+              "description": "Diseño de producto digital: sistema de diseño, UI, prototipo high-fi y handoff a desarrollo.",
+              "provider": {
+                "@id": "https://futurox.cl/#org"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Equipos de producto digital"
+              },
+              "areaServed": [
+                "CL",
+                "BO",
+                "EC",
+                "Latin America"
+              ],
+              "availableChannel": [
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Presencial"
+                },
+                {
+                  "@type": "ServiceChannel",
+                  "name": "Remoto"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
-  <div id="root"></div>
-
-  <!-- Primitives -->
-  <script type="text/babel" src="components/ArcMark.jsx"></script>
-  <script type="text/babel" src="components/Button.jsx"></script>
-  <script type="text/babel" src="components/Pill.jsx"></script>
-  <script type="text/babel" src="components/LinkedInIcon.jsx"></script>
-  <script type="text/babel" src="components/i18n.jsx"></script>
-
-  <!-- Visualizations -->
-  <script type="text/babel" src="components/SystemViz.jsx"></script>
-  <script type="text/babel" src="components/ServiceVisuals.jsx"></script>
-
-  <!-- Sections -->
-  <script type="text/babel" src="components/NavSite.jsx"></script>
-  <script type="text/babel" src="components/HeroSite.jsx"></script>
-  <script type="text/babel" src="components/Positioning.jsx"></script>
-  <script type="text/babel" src="components/ServicesNarrative.jsx"></script>
-  <script type="text/babel" src="components/Founders.jsx"></script>
-  <script type="text/babel" src="components/ContactSite.jsx"></script>
-  <script type="text/babel" src="components/Footer.jsx"></script>
-
-  <!-- App -->
-  <script type="text/babel" src="site.jsx"></script>
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand" aria-label="FUTUROX — inicio" data-i18n-aria="nav.brand">
+      <img src="assets/logo-mark.svg" alt="" width="24" height="24">
+      <img src="assets/logo-wordmark-ink.svg" alt="FUTUROX" width="104" height="15">
+    </a>
+    <div class="nav__right">
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <nav class="nav__links" aria-label="Navegación principal">
+        <a class="nav__link" href="talleres/index.html" data-i18n="nav.workshops">Talleres</a>
+        <a class="nav__link" href="consultoria/index.html" data-i18n="nav.consulting">Consultoría</a>
+        <a class="nav__link" href="recursos/index.html" data-i18n="nav.resources">Recursos</a>
+        <a class="nav__link" href="radar/index.html" data-i18n="nav.radar">Radar</a>
+        <a class="nav__link" href="equipo/index.html" data-i18n="nav.team">Equipo</a>
+        <a class="btn btn--primary btn--sm" href="contacto/index.html" data-i18n="nav.cta">Conversemos</a>
+      </nav>
+      <button type="button" class="nav__burger" aria-label="Abrir menú" data-i18n-aria="nav.open" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú">
+  <div class="mobile-menu__head">
+    <a href="index.html" class="nav__brand" aria-label="FUTUROX — inicio">
+      <img src="assets/logo-mark.svg" alt="" width="24" height="24">
+      <img src="assets/logo-wordmark-ink.svg" alt="FUTUROX" width="104" height="15">
+    </a>
+    <button type="button" class="mobile-menu__close" aria-label="Cerrar menú" data-i18n-aria="nav.close">×</button>
+  </div>
+  <nav class="mobile-menu__links" aria-label="Navegación móvil">
+    <a href="talleres/index.html" data-i18n="nav.workshops">Talleres</a>
+    <a href="consultoria/index.html" data-i18n="nav.consulting">Consultoría</a>
+    <a href="recursos/index.html" data-i18n="nav.resources">Recursos</a>
+    <a href="radar/index.html" data-i18n="nav.radar">Radar</a>
+    <a href="equipo/index.html" data-i18n="nav.team">Equipo</a>
+    <a href="contacto/index.html" data-i18n="nav.cta">Conversemos</a>
+  </nav>
+  <div class="mobile-menu__foot">
+    <span class="eyebrow">Viña del Mar · Santiago · LATAM</span>
+    <a class="btn btn--primary btn--sm" href="contacto/index.html" data-i18n="nav.cta">Conversemos</a>
+  </div>
+</div>
+<main id="top">
+<section class="hero">
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Consultora de innovación estratégica · Chile → Latinoamérica</p>
+        <h1 data-i18n="hero.title" id="hero-title">Equipos que aprenden a innovar trabajando sobre los <em>desafíos reales</em> de tu empresa.</h1>
+        <p class="hero__sub" data-i18n="hero.sub">Talleres, programas y consultoría de innovación estratégica. Tu equipo trabaja sobre un problema real del negocio y sale con decisiones, prototipos y una hoja de ruta.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="contacto/index.html" data-i18n="hero.cta1">Conversemos</a>
+          <a class="link-arrow" href="talleres/index.html" data-i18n="hero.cta2">Ver talleres →</a>
+        </div>
+      </div>
+      <div class="hero__viz" aria-hidden="true">
+        <svg viewBox="0 0 520 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="#0A1230" stroke-width="1.2" opacity="0.5"><line x1="60" y1="80" x2="200" y2="180"/><line x1="90" y1="300" x2="200" y2="200"/><line x1="130" y1="150" x2="200" y2="190"/><line x1="70" y1="210" x2="200" y2="195"/><line x1="150" y1="360" x2="210" y2="215"/><line x1="170" y1="60" x2="205" y2="175"/></g>
+          <g stroke="#0A1230" stroke-width="1.4"><path d="M210 195 C 280 195, 300 160, 360 160" opacity="0.85"/><path d="M210 200 C 290 205, 310 240, 368 240" opacity="0.55"/></g>
+          <path d="M360 160 L 470 160" stroke="#FF6B35" stroke-width="2"/><path d="M462 152 L 472 160 L 462 168" stroke="#FF6B35" stroke-width="2" fill="none"/>
+          <g fill="#F5F1EA" stroke="#0A1230" stroke-width="1.4"><circle cx="60" cy="80" r="7"/><circle cx="130" cy="150" r="5.5"/><circle cx="70" cy="210" r="6"/><circle cx="90" cy="300" r="7"/><circle cx="150" cy="360" r="5.5"/><circle cx="170" cy="60" r="5"/></g>
+          <circle cx="93" cy="130" r="4" fill="none" stroke="#5B9DAF" stroke-width="1.4"/><circle cx="120" cy="255" r="4" fill="none" stroke="#5B9DAF" stroke-width="1.4"/>
+          <circle cx="205" cy="195" r="11" fill="#FF6B35"/><circle cx="360" cy="160" r="7" fill="#0A1230"/><circle cx="368" cy="240" r="5.5" fill="none" stroke="#0A1230" stroke-width="1.4"/>
+          <g font-family="JetBrains Mono, monospace" font-size="10" fill="#3A4470" letter-spacing="1"><text x="46" y="52">SEÑALES</text><text x="228" y="230">SÍNTESIS</text><text x="388" y="144">RUTA</text></g>
+        </svg>
+      </div>
+    </div>
+    <div class="entity">
+      <span class="eyebrow" data-i18n="entity.label">FUTUROX en una línea</span>
+      <p data-i18n="entity.text">FUTUROX es una consultora de innovación estratégica con base en Viña del Mar y Santiago, Chile. Ofrece talleres de innovación, Futures Thinking y Design Thinking para equipos de empresas, y consultoría en estrategia, diseño de servicios y experiencia. Trabaja presencial en Chile y remoto en toda Latinoamérica.</p>
+    </div>
+  </div>
+</section>
+<section class="selector hairline-top">
+  <div class="container">
+    <p class="eyebrow" data-i18n="sel.eyebrow">Empieza por tu necesidad</p>
+    <h2 class="display sel-title" data-i18n="sel.title">¿Qué necesitas lograr?</h2>
+    <div class="selector__grid">
+      <a class="need reveal" href="talleres/index.html">
+        <h3 data-i18n="sel.n1">«Quiero que mi equipo aprenda a innovar de verdad, no otra charla.»</h3>
+        <span data-i18n="sel.n1.to">Talleres y programas →</span>
+      </a>
+      <a class="need reveal" href="consultoria/diseno-de-futuros/index.html">
+        <h3 data-i18n="sel.n2">«Necesitamos repensar la estrategia más allá del plan anual.»</h3>
+        <span data-i18n="sel.n2.to">Consultoría · Diseño de Futuros →</span>
+      </a>
+      <a class="need reveal" href="consultoria/servicios-y-experiencia/index.html">
+        <h3 data-i18n="sel.n3">«Queremos rediseñar la experiencia de nuestros clientes.»</h3>
+        <span data-i18n="sel.n3.to">Consultoría · Diseño de Servicios →</span>
+      </a>
+      <a class="need reveal" href="talleres/programa-innovacion/index.html">
+        <h3 data-i18n="sel.n4">«Buscamos instalar capacidades de innovación en la organización.»</h3>
+        <span data-i18n="sel.n4.to">Programa de Innovación Estratégica →</span>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="section-sm hairline-top">
+  <div class="container">
+    <div class="family__grid">
+      <a class="family reveal" href="talleres/index.html">
+        <h2 data-i18n="fam.ws.title">Talleres y programas</h2>
+        <p data-i18n="fam.ws.desc">Jornadas de trabajo sobre desafíos reales. Tu equipo sale con resultados, no con frases.</p>
+        <span class="family__cta" data-i18n="fam.ws.cta">Ver talleres →</span>
+      </a>
+      <a class="family reveal" href="consultoria/index.html">
+        <h2 data-i18n="fam.co.title">Consultoría</h2>
+        <p data-i18n="fam.co.desc">De la estrategia al producto: futuros, innovación, servicios e interfaces.</p>
+        <span class="family__cta" data-i18n="fam.co.cta">Ver consultoría →</span>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="why section-sm">
+  <div class="container">
+    <p class="eyebrow eyebrow--coral" data-i18n="why.eyebrow">Por qué FUTUROX</p>
+    <div class="why__grid">
+      <div class="why__item reveal">
+        <h3 data-i18n="why.1.title">Trabajo real, no inspiración.</h3>
+        <p data-i18n="why.1.desc">Cada sesión usa desafíos de tu propia organización. Nadie sale con un cuaderno de frases: sale con decisiones.</p>
+      </div>
+      <div class="why__item reveal">
+        <h3 data-i18n="why.2.title">Capacidades que se quedan.</h3>
+        <p data-i18n="why.2.desc">El método se transfiere al equipo. Cuando nos vamos, la forma de trabajar permanece.</p>
+      </div>
+      <div class="why__item reveal">
+        <h3 data-i18n="why.3.title">Del taller a la estrategia.</h3>
+        <p data-i18n="why.3.desc">Lo que empieza en una jornada puede escalar a la hoja de ruta estratégica de la organización.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ctaband">
+  <div class="container">
+    <h2 data-i18n="cta.title">¿Qué desafío tiene tu equipo?</h2>
+    <a class="btn btn--primary" href="contacto/index.html" data-i18n="cta.btn">Conversemos</a>
+    <p class="ctaband__note" data-i18n="cta.note">Equipos de instituciones financieras, corporaciones y centros de ciencia en Chile, Bolivia y Ecuador.</p>
+  </div>
+</section>
+</main>
+  <a class="wa-float" href="https://wa.me/56951087502" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp" data-i18n-aria="wa.float">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.73-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg>
+  </a>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" aria-label="FUTUROX — inicio">
+          <img src="assets/logo-futurox-on-navy.png" alt="FUTUROX" width="150" height="42" loading="lazy" style="width:150px;height:auto;">
+        </a>
+        <p class="footer__tagline" data-i18n="ft.tagline">El futuro no llega. Se diseña.</p>
+      </div>
+      <nav class="footer__col" aria-label="Talleres">
+        <h4 data-i18n="ft.col1">Talleres</h4>
+        <a href="talleres/futures-thinking/index.html">Futures Thinking</a>
+        <a href="talleres/programa-innovacion/index.html" data-i18n="nm.pi">Innovación Estratégica</a>
+        <a href="talleres/design-thinking/index.html">Design Thinking</a>
+        <a href="talleres/diseno-de-servicios/index.html" data-i18n="nm.ds">Diseño de Servicios</a>
+      </nav>
+      <nav class="footer__col" aria-label="Consultoría">
+        <h4 data-i18n="ft.col2">Consultoría</h4>
+        <a href="consultoria/diseno-de-futuros/index.html" data-i18n="nm.df">Diseño de Futuros</a>
+        <a href="consultoria/innovacion/index.html" data-i18n="nm.in">Innovación y Design Thinking</a>
+        <a href="consultoria/servicios-y-experiencia/index.html" data-i18n="nm.se">Servicios y Experiencia</a>
+        <a href="consultoria/interfaces-digitales/index.html" data-i18n="nm.id">Interfaces Digitales</a>
+      </nav>
+      <nav class="footer__col" aria-label="FUTUROX">
+        <h4>FUTUROX</h4>
+        <a href="equipo/index.html" data-i18n="ft.c3.team">Equipo</a>
+        <a href="recursos/index.html" data-i18n="ft.c3.res">Recursos</a>
+        <a href="radar/index.html" data-i18n="nav.radar">Radar</a>
+        <a href="contacto/index.html" data-i18n="ft.c3.contact">Contacto</a>
+        <!-- TODO: confirmar URL de LinkedIn de FUTUROX -->
+        <a href="https://www.linkedin.com/company/futurox/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Futurox · Viña del Mar, Chile</span>
+      <span data-i18n="ft.updated">Última actualización: julio 2026</span>
+    </div>
+  </div>
+</footer>
+<script src="i18n-en.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

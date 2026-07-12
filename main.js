@@ -1,0 +1,127 @@
+/* ============================================================
+   FUTUROX · main.js
+   Vanilla: toggle idioma (ES en HTML / EN desde i18n-en.js),
+   menú móvil, reveal-on-scroll, formulario. Sin dependencias.
+   ============================================================ */
+(function () {
+  "use strict";
+
+  var EN = window.FUTUROX_EN || {};
+  var STORAGE_KEY = "futurox.lang";
+  var esCache = {};
+  var currentLang = "es";
+
+  var ES_STATUS = {
+    "form.sending": "Enviando…",
+    "form.ok": "Gracias. Te respondemos dentro de 48 horas.",
+    "form.error": "No se pudo enviar. Escríbenos a hola@futurox.cl o por WhatsApp."
+  };
+
+  function collect() {
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n");
+      if (!(k in esCache)) esCache[k] = el.innerHTML;
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n-ph");
+      if (!(k in esCache)) esCache[k] = el.getAttribute("placeholder") || "";
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n-aria");
+      if (!(k in esCache)) esCache[k] = el.getAttribute("aria-label") || "";
+    });
+  }
+
+  function apply(lang) {
+    currentLang = lang;
+    document.documentElement.setAttribute("lang", lang);
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n");
+      var v = lang === "en" ? (EN[k] != null ? EN[k] : esCache[k]) : esCache[k];
+      if (v != null && el.innerHTML !== v) el.innerHTML = v;
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n-ph");
+      var v = lang === "en" ? (EN[k] != null ? EN[k] : esCache[k]) : esCache[k];
+      if (v != null) el.setAttribute("placeholder", v);
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n-aria");
+      var v = lang === "en" ? (EN[k] != null ? EN[k] : esCache[k]) : esCache[k];
+      if (v != null) el.setAttribute("aria-label", v);
+    });
+    document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
+    });
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  }
+
+  function detectLang() {
+    try {
+      var s = localStorage.getItem(STORAGE_KEY);
+      if (s === "es" || s === "en") return s;
+    } catch (e) {}
+    var nav = (navigator.language || "es").toLowerCase();
+    return nav.indexOf("es") === 0 ? "es" : "en";
+  }
+
+  function initMenu() {
+    var burger = document.querySelector(".nav__burger");
+    var menu = document.getElementById("mobile-menu");
+    if (!burger || !menu) return;
+    var close = menu.querySelector(".mobile-menu__close");
+    function open() { menu.classList.add("is-open"); burger.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; }
+    function shut() { menu.classList.remove("is-open"); burger.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; }
+    burger.addEventListener("click", open);
+    close.addEventListener("click", shut);
+    menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", shut); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.classList.contains("is-open")) shut(); });
+  }
+
+  function initReveal() {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var items = document.querySelectorAll(".reveal");
+    if (reduced || !("IntersectionObserver" in window)) {
+      items.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add("is-visible"); io.unobserve(entry.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+  function initForm() {
+    var form = document.getElementById("contact-form");
+    if (!form) return;
+    var status = form.querySelector(".form__status");
+    var btn = form.querySelector("button[type=submit]");
+    function msg(k) { return currentLang === "en" ? EN[k] : ES_STATUS[k]; }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      status.className = "form__status";
+      status.textContent = msg("form.sending");
+      btn.disabled = true;
+      fetch(form.action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } })
+        .then(function (res) {
+          if (res.ok) { status.className = "form__status form__status--ok"; status.textContent = msg("form.ok"); form.reset(); }
+          else throw new Error("HTTP " + res.status);
+        })
+        .catch(function () { status.className = "form__status form__status--error"; status.textContent = msg("form.error"); })
+        .finally(function () { btn.disabled = false; });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    collect();
+    apply(detectLang());
+    document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+      b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
+    });
+    initMenu();
+    initReveal();
+    initForm();
+  });
+})();
