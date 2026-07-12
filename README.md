@@ -6,11 +6,11 @@ Sitio de FUTUROX (consultora de innovación estratégica, Chile). HTML estático
 
 ```
 index.html                                    Home (hub liviano)
-talleres/index.html                           Panorama de talleres
-talleres/futures-thinking/index.html          Taller de Futures Thinking
+talleres/index.html                           Panorama de workshops
+talleres/futures-thinking/index.html          Workshop de Futures Thinking
 talleres/programa-innovacion/index.html       Programa de Innovación Estratégica
-talleres/design-thinking/index.html           Taller de Design Thinking aplicado
-talleres/diseno-de-servicios/index.html       Taller de Diseño de Servicios y Experiencia
+talleres/design-thinking/index.html           Workshop de Design Thinking aplicado
+talleres/diseno-de-servicios/index.html       Workshop de Diseño de Servicios y Experiencia
 consultoria/index.html                        Panorama de consultoría
 consultoria/diseno-de-futuros/index.html      Diseño de Futuros
 consultoria/innovacion/index.html             Innovación y Design Thinking

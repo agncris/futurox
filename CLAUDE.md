@@ -18,6 +18,7 @@ Sitio corporativo de FUTUROX, consultora chilena de innovación estratégica y F
 7. La palabra "backcasting" no aparece en el sitio (se describe como "diseñar desde el futuro deseado hacia atrás").
 8. No inventar métricas, clientes, testimonios ni resultados. Sin precios en el sitio.
 9. Copy aprobado (guías, radar) es VERBATIM: no "mejorar" textos existentes sin instrucción explícita.
+10. La familia de servicios se llama **Workshops** en el copy visible (nav, footer, títulos, nombres de producto "Workshop de Futures Thinking", metadatos, JSON-LD, llms.txt). Las URLs se mantienen en `/talleres/` por SEO (la búsqueda en Chile es "taller de innovación"; el sitemap ya está indexado). La palabra "taller" se conserva SOLO cuando se habla de la categoría genérica del mercado, no de los productos de FUTUROX (p. ej. la guía `/recursos/como-elegir-taller-de-innovacion/`, el FAQ "¿Es otro taller motivacional?", "otros talleres de innovación").
 
 ## Identidad visual (valores exactos)
 - Colores 60/30/10: bone `#F5F1EA` (fondos), ink `#0A1230` (texto y secciones oscuras), coral `#FF6B35` (solo CTAs/acentos). Secundarios en styles.css. Cyan `#5B9DAF` solo dentro de diagramas.
