@@ -27,7 +27,7 @@ gen1.js · gen2.js                             generador de páginas (herramient
 
 \* `gen1.js`/`gen2.js` construyen las 13 páginas + `i18n-en.js` + `sitemap.xml` a partir de datos bilingües. Si editas contenido a mano en los HTML, mantén sincronizado el diccionario `i18n-en.js`. Puedes borrarlos del repo publicado.
 
-**Nota sobre rutas:** los HTML usan rutas relativas (`../../styles.css`), no absolutas. Esto hace que el sitio funcione igual en `https://futurox.cl/`, en `https://USUARIO.github.io/REPO/` y en preview local — sin configuración.
+**Nota sobre rutas:** los HTML usan rutas RELATIVAS (`../../styles.css`, `../talleres/index.html`): el sitio funciona igual en `https://futurox.cl/`, en `https://USUARIO.github.io/REPO/`, en preview local y abriendo los archivos directamente. Los canonical, el sitemap y llms.txt usan las URLs absolutas limpias (`https://futurox.cl/talleres/`) — los servidores sirven `index.html` automáticamente en esas rutas.
 
 ## Publicar en GitHub Pages
 
@@ -37,7 +37,7 @@ gen1.js · gen2.js                             generador de páginas (herramient
 
 ## Antes de publicar — reemplazos pendientes
 
-- [ ] **ID de Formspree**: en `contacto/index.html`, reemplazar `https://formspree.io/f/TU_ID` por el ID real (crear el formulario en formspree.io apuntando a hola@futurox.cl).
+- [ ] **Activar el formulario (FormSubmit)**: el form apunta a `formsubmit.co/ajax/hola@futurox.cl`. El PRIMER envío desde el dominio dispara un correo de activación a hola@futurox.cl — hay que hacer clic en ese link una sola vez y los mensajes empiezan a llegar. (Si prefieren Formspree u otro servicio, basta cambiar el `action` del form.)
 - [ ] **Imagen Open Graph**: crear `assets/og-image.png` (1200×630): logo FUTUROX + tagline "El futuro no llega. Se diseña." sobre navy `#0A1230`.
 - [ ] **URLs de LinkedIn**: confirmar las de los fundadores y la de la empresa (buscar `TODO` y `sameAs` en los HTML y en `llms.txt`).
 - [ ] **Logos de clientes**: cuando haya autorización, agregar franja de logos (hoy solo hay una línea de texto en el cierre de la home).
@@ -45,6 +45,8 @@ gen1.js · gen2.js                             generador de páginas (herramient
 - [ ] **Fecha de actualización**: al editar contenido, sincronizar: "Última actualización" en el footer, `dateModified` en el JSON-LD de la home y `lastmod` en `sitemap.xml`.
 
 ## Notas
+
+- **404**: en GitHub Pages `404.html` funciona solo. En hosting Apache (cPanel) se necesita el `.htaccess` incluido (`ErrorDocument 404 /404.html`) — subirlo a la raíz junto al resto.
 
 - **Feed RSS del Radar** (`radar/feed.xml`): se actualiza a mano con cada edición — agregar un `<item>` nuevo (título, link, fecha, resumen) y actualizar `lastBuildDate`.
 
