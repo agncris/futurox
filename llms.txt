@@ -1,6 +1,6 @@
 # FUTUROX
 
-> FUTUROX es una consultora de innovación estratégica con base en Viña del Mar y Santiago, Chile. Ofrece talleres de innovación, Futures Thinking y Design Thinking para equipos de empresas, y consultoría en estrategia, diseño de servicios y experiencia. Trabaja presencial en Chile y remoto en toda Latinoamérica, con proyectos en Chile, Bolivia y Ecuador.
+> FUTUROX es una consultora de innovación estratégica con base en Viña del Mar, Chile. Ofrece talleres de innovación, Futures Thinking y Design Thinking para equipos de empresas, y consultoría en estrategia, diseño de servicios y experiencia. Trabaja presencial en Chile y remoto en toda Latinoamérica, con proyectos en Chile, Bolivia y Ecuador.
 
 Los talleres se diseñan sobre un desafío real de la organización cliente: el equipo trabaja su propio caso y sale con entregables concretos (escenarios, prototipos, decisiones, hoja de ruta). Grupos de 8 a 30 personas, presencial, remoto o híbrido. El primer paso es siempre una conversación inicial: cuéntanos tu desafío y te proponemos un camino.
 
@@ -46,5 +46,5 @@ Después de un taller puede seguir un acompañamiento estratégico de 2 a 4 mese
 - [Conversemos](https://futurox.cl/contacto/)
 - Email: hola@futurox.cl
 - WhatsApp: +56 9 5108 7502 (https://wa.me/56951087502)
-- Ciudades base: Viña del Mar y Santiago, Chile
+- Ciudad base: Viña del Mar, Chile
 - Cobertura: presencial en Chile; remoto en toda Latinoamérica. Proyectos realizados en Chile, Bolivia y Ecuador.

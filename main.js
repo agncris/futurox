@@ -6,10 +6,36 @@
 (function () {
   "use strict";
 
-  var EN = window.FUTUROX_EN || {};
+  var thisScript = document.currentScript;
   var STORAGE_KEY = "futurox.lang";
   var esCache = {};
   var currentLang = "es";
+
+  // Diccionario EN — vive en i18n-en.js y se carga BAJO DEMANDA (solo si se
+  // usa inglés). El ES es la versión del HTML, así que en español no se pide.
+  function EN() { return window.FUTUROX_EN || {}; }
+
+  // Ruta de i18n-en.js relativa a este propio script (robusto a subcarpetas).
+  function i18nUrl() {
+    try { return new URL("i18n-en.js", thisScript.src).href; }
+    catch (e) { return "/i18n-en.js"; }
+  }
+
+  // Carga el diccionario EN una sola vez; cb(ok) se llama siempre (ok=false → fallback ES).
+  var enState = "idle"; // idle | loading | loaded
+  var enQueue = [];
+  function flushEN(ok) { var q = enQueue; enQueue = []; q.forEach(function (f) { f(ok); }); }
+  function loadEN(cb) {
+    if (window.FUTUROX_EN) { enState = "loaded"; cb(true); return; }
+    enQueue.push(cb);
+    if (enState === "loading") return;
+    enState = "loading";
+    var s = document.createElement("script");
+    s.src = i18nUrl();
+    s.onload = function () { enState = "loaded"; flushEN(true); };
+    s.onerror = function () { enState = "idle"; flushEN(false); };
+    document.head.appendChild(s);
+  }
 
   var ES_STATUS = {
     "form.sending": "Enviando…",
@@ -35,19 +61,20 @@
   function apply(lang) {
     currentLang = lang;
     document.documentElement.setAttribute("lang", lang);
+    var en = EN();
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var k = el.getAttribute("data-i18n");
-      var v = lang === "en" ? (EN[k] != null ? EN[k] : esCache[k]) : esCache[k];
+      var v = lang === "en" ? (en[k] != null ? en[k] : esCache[k]) : esCache[k];
       if (v != null && el.innerHTML !== v) el.innerHTML = v;
     });
     document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
       var k = el.getAttribute("data-i18n-ph");
-      var v = lang === "en" ? (EN[k] != null ? EN[k] : esCache[k]) : esCache[k];
+      var v = lang === "en" ? (en[k] != null ? en[k] : esCache[k]) : esCache[k];
       if (v != null) el.setAttribute("placeholder", v);
     });
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
       var k = el.getAttribute("data-i18n-aria");
-      var v = lang === "en" ? (EN[k] != null ? EN[k] : esCache[k]) : esCache[k];
+      var v = lang === "en" ? (en[k] != null ? en[k] : esCache[k]) : esCache[k];
       if (v != null) el.setAttribute("aria-label", v);
     });
     document.querySelectorAll(".lang-toggle button").forEach(function (b) {
@@ -98,7 +125,7 @@
     if (!form) return;
     var status = form.querySelector(".form__status");
     var btn = form.querySelector("button[type=submit]");
-    function msg(k) { return currentLang === "en" ? EN[k] : ES_STATUS[k]; }
+    function msg(k) { return currentLang === "en" ? EN()[k] : ES_STATUS[k]; }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       status.className = "form__status";
@@ -114,11 +141,33 @@
     });
   }
 
+  // Marca el toggle como "cargando" mientras se descarga el diccionario EN.
+  function setToggleBusy(busy) {
+    document.querySelectorAll(".lang-toggle").forEach(function (t) {
+      t.classList.toggle("is-loading", busy);
+      t.setAttribute("aria-busy", String(busy));
+    });
+    document.querySelectorAll(".lang-toggle button").forEach(function (b) { b.disabled = busy; });
+  }
+
+  // Cambia de idioma; si es inglés y aún no está el diccionario, lo carga primero.
+  function setLang(lang) {
+    if (lang === "en" && !window.FUTUROX_EN) {
+      setToggleBusy(true);
+      loadEN(function (ok) {
+        setToggleBusy(false);
+        apply(ok ? "en" : "es");
+      });
+    } else {
+      apply(lang);
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     collect();
-    apply(detectLang());
+    setLang(detectLang());
     document.querySelectorAll(".lang-toggle button").forEach(function (b) {
-      b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
+      b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
     });
     initMenu();
     initReveal();

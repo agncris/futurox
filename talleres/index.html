@@ -19,9 +19,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Talleres y programas de innovación para equipos — FUTUROX">
   <meta name="twitter:image" content="https://futurox.cl/assets/og-image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/dmsans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/jetbrainsmono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../styles.css" as="style">
   <link rel="stylesheet" href="../styles.css">
   <script type="application/ld+json">
 {
@@ -101,7 +102,7 @@
     <a href="../contacto/index.html" data-i18n="nav.cta">Conversemos</a>
   </nav>
   <div class="mobile-menu__foot">
-    <span class="eyebrow">Viña del Mar · Santiago · LATAM</span>
+    <span class="eyebrow">Viña del Mar · LATAM</span>
     <a class="btn btn--primary btn--sm" href="../contacto/index.html" data-i18n="nav.cta">Conversemos</a>
   </div>
 </div>
@@ -117,25 +118,25 @@
   <div class="container">
     <div class="wgrid">
       <a class="wcard reveal" href="../talleres/futures-thinking/index.html">
-        <h3 data-i18n="nm.ft">Taller de Futures Thinking</h3>
+        <h2 data-i18n="nm.ft">Taller de Futures Thinking</h2>
         <span class="wcard__who" data-i18n="wsh.ft.for">Directivos y estrategia · media jornada (4 h)</span>
         <p data-i18n="wsh.ft.what">El equipo deja de reaccionar y aprende a anticipar: convierte los cambios de la industria en decisiones concretas.</p>
         <span class="family__cta" data-i18n="wsh.see">Ver taller →</span>
       </a>
       <a class="wcard reveal" href="../talleres/programa-innovacion/index.html">
-        <h3 data-i18n="wsh.pi.name">Programa de Innovación Estratégica</h3>
+        <h2 data-i18n="wsh.pi.name">Programa de Innovación Estratégica</h2>
         <span class="wcard__who" data-i18n="wsh.pi.for">Gerencias y equipos ampliados · jornada completa (8 h) o dos medias</span>
         <p data-i18n="wsh.pi.what">El equipo recorre el ciclo completo —explorar, definir, priorizar— y termina alineado tras una dirección.</p>
         <span class="family__cta" data-i18n="wsh.see">Ver taller →</span>
       </a>
       <a class="wcard reveal" href="../talleres/design-thinking/index.html">
-        <h3 data-i18n="wsh.dt.name">Taller de Design Thinking aplicado</h3>
+        <h2 data-i18n="wsh.dt.name">Taller de Design Thinking aplicado</h2>
         <span class="wcard__who" data-i18n="wsh.dt.for">Equipos de cualquier área · media jornada o jornada completa</span>
         <p data-i18n="wsh.dt.what">Un proceso de trabajo donde el equipo empatiza, define, idea y prototipa sobre su propio caso.</p>
         <span class="family__cta" data-i18n="wsh.see">Ver taller →</span>
       </a>
       <a class="wcard reveal" href="../talleres/diseno-de-servicios/index.html">
-        <h3 data-i18n="wsh.ds.name">Taller de Diseño de Servicios y Experiencia</h3>
+        <h2 data-i18n="wsh.ds.name">Taller de Diseño de Servicios y Experiencia</h2>
         <span class="wcard__who" data-i18n="wsh.ds.for">Experiencia de clientes, operaciones y canales · jornada completa</span>
         <p data-i18n="wsh.ds.what">El equipo mapea su servicio con los ojos del cliente, encuentra las fricciones que cuestan negocio y las prioriza.</p>
         <span class="family__cta" data-i18n="wsh.see">Ver taller →</span>
@@ -181,21 +182,21 @@
         <p class="footer__tagline" data-i18n="ft.tagline">El futuro no llega. Se diseña.</p>
       </div>
       <nav class="footer__col" aria-label="Talleres">
-        <h4 data-i18n="ft.col1">Talleres</h4>
+        <h2 data-i18n="ft.col1">Talleres</h2>
         <a href="../talleres/futures-thinking/index.html">Futures Thinking</a>
         <a href="../talleres/programa-innovacion/index.html" data-i18n="nm.pi">Innovación Estratégica</a>
         <a href="../talleres/design-thinking/index.html">Design Thinking</a>
         <a href="../talleres/diseno-de-servicios/index.html" data-i18n="nm.ds">Diseño de Servicios</a>
       </nav>
       <nav class="footer__col" aria-label="Consultoría">
-        <h4 data-i18n="ft.col2">Consultoría</h4>
+        <h2 data-i18n="ft.col2">Consultoría</h2>
         <a href="../consultoria/diseno-de-futuros/index.html" data-i18n="nm.df">Diseño de Futuros</a>
         <a href="../consultoria/innovacion/index.html" data-i18n="nm.in">Innovación y Design Thinking</a>
         <a href="../consultoria/servicios-y-experiencia/index.html" data-i18n="nm.se">Servicios y Experiencia</a>
         <a href="../consultoria/interfaces-digitales/index.html" data-i18n="nm.id">Interfaces Digitales</a>
       </nav>
       <nav class="footer__col" aria-label="FUTUROX">
-        <h4>FUTUROX</h4>
+        <h2>FUTUROX</h2>
         <a href="../equipo/index.html" data-i18n="ft.c3.team">Equipo</a>
         <a href="../recursos/index.html" data-i18n="ft.c3.res">Recursos</a>
         <a href="../radar/index.html" data-i18n="nav.radar">Radar</a>
@@ -210,7 +211,6 @@
     </div>
   </div>
 </footer>
-<script src="../i18n-en.js"></script>
-<script src="../main.js"></script>
+<script defer src="../main.js"></script>
 </body>
 </html>
